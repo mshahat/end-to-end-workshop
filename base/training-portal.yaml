@@ -10,7 +10,7 @@ spec:
       type: anonymous
   workshops:
   - name: e2e-workshop
-    capacity: 20
-    reserved: 1
-    expires: 4h
+    capacity: 100
+    reserved: 10
+    expires: 2h
     orphaned: 2h
