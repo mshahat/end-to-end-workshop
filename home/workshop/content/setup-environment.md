@@ -1,4 +1,4 @@
-## Welcome to the Tanzu End to End demo!  In this session, we are going to explore some of the [Tanzu Advanced Edition](https://tanzu.vmware.com/tanzu/advanced "Tanzu Advanced Edition") capabilities.
+## Welcome to a Hands On Lab on VMware Tanzu!  In this session, we are going to explore some of the [Tanzu Advanced Edition](https://tanzu.vmware.com/tanzu/advanced "Tanzu Advanced Edition") capabilities with focus on the Developer and DevOps tooling
 
 For the **Accenture CIE** event taking place in **March 2021** we will explore 
 

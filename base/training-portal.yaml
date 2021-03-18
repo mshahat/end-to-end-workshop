@@ -11,6 +11,6 @@ spec:
   workshops:
   - name: e2e-workshop
     capacity: 100
-    reserved: 10
+    reserved: 20
     expires: 2h
     orphaned: 2h
