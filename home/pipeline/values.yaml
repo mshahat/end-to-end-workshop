@@ -3,8 +3,8 @@
 petclinic:
   host: 
   image:
-  configRepo: https://github.com/tanzu-end-to-end/spring-petclinic-config
-  codeRepo: https://github.com/cdelashmutt-pivotal/spring-petclinic
+  configRepo: https://github.com/mshahat/spring-petclinic-config
+  codeRepo: https://github.com/mshahat/spring-petclinic
   wavefront:
     applicationName: 
     uri: https://vmware.wavefront.com
