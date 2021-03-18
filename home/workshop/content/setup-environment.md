@@ -76,9 +76,9 @@ url: https://kubeapps.{{ ingress_domain }}/#/c/default/ns/{{ session_namespace }
 You should see a MySQL Deployment called `petclinic-db`.  It may still be starting when you first examine it, but it should go to 1 pod active fairly quickly.  Leave this view on the "Apps" tab so it is staged properly.
 
 # SaaS Services
-**Important**: For the next sections, it is vital that you  make sure to sign-in to cloud.vmware.com with your **@vmware.com** email address and select the **"Tanzu End to End"** organization.  Please be careful not to alter the services or configurations of the clusters in these environments as they are shared for the entire End to End Demo Environment.
 
-Click below to sign in.  If you can't see this organization, let us know your email address in the [#tanzu-e2e-demo](https://vmware.slack.com/archives/C01AMS26GJJ) channel in Slack and we can get you added.
+VMware Tanzu components such as Tanzu Mission Control or Tanzu Service Mesh are SaaS services. We encourage you to register for a trial on https://cloud.vmware.com and try it later. They are not part of today's Hands On Lab
+
 ```dashboard:open-url
 url: https://console.cloud.vmware.com
 ```
@@ -95,24 +95,6 @@ Now, copy your app name below, click on the Application dropdown and select Serv
 text: petclinic-{{ session_namespace }}
 ```
 
-## Tanzu Mission Control
-Open a tab for Tanzu Mission Control
-```dashboard:open-url
-url: https://tanzuendtoend.tmc.cloud.vmware.com/clusterGroups/end-to-end
-```
-
-## Tanzu Application Catalog
-Open a tab to Tanzu Application Catalog.  Make sure to select the "Tanzu End to End" org if you are prompted.
-```dashboard:open-url
-url: https://tac.bitnami.com/apps
-```
-
-## Tanzu Service Mesh
-Open tab to Tanzu Service Mesh to the `e2e-demo` Global namespace by clicking the link below.  If you don't see the graph for the Global Namespace showing the `e2e-eks` and `e2e-tsm1` clusters, make sure to select the "Tanzu End to End" org, close the tab, and then reopen it again with the link below.
-```dashboard:open-url
-url: https://prod-2.nsxservicemesh.vmware.com/global-namespaces-detail/e2e-demo/gns-topology
-```
-
 # Spring and/or Steeltoe Starters
 Click the links below to open up to the project generators for Spring and Steeltoe for .NET
 ```dashboard:open-url
@@ -122,7 +104,6 @@ url: https://start.spring.io
 ```dashboard:open-url
 url: https://start.steeltoe.io
 ```
-
 
 # What has been covered
 We expect you have gone through the following
