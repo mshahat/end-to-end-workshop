@@ -1,15 +1,15 @@
-## Welcome to a Hands On Lab on VMware Tanzu!  In this session, we are going to explore some of the [Tanzu Advanced Edition](https://tanzu.vmware.com/tanzu/advanced "Tanzu Advanced Edition") capabilities with focus on the Developer and DevOps tooling
+## Welcome to a Hands On Lab on VMware Tanzu!  In this session, we are going to explore some of the [Tanzu Advanced Edition](https://tanzu.vmware.com/tanzu/advanced "Tanzu Advanced Edition") capabilities with focus on the Developer and DevSecOps supply chain
 
 For the **Accenture CIE** event taking place in **March 2021** we will explore 
 
   1. A [Spring](http://start.spring.io/ "Spring") app 
   1. [Concourse](https://tanzu.vmware.com/concoursehttp:// "Concourse") as a cloud native CI server
-  1. [Tanzu Build Service](https://tanzu.vmware.com/build-service "Tanzu Build Service")
+  1. [Tanzu Build Service](https://tanzu.vmware.com/build-service "Tanzu Build Service") as a declartive and repeatible approach to building your source code into container image see [paketo-io](https://paketo.io "paketo-io") and [kpack](https://github.com/pivotal/kpack "kpack")
   1. [Harbor](https://goharbor.io/ "Harbor") as a private container image registry
-  1. Kubeapps as a local marketplace of curated apps such as databases. That's the OSS version of [Tanzu Application Catalog](https://tanzu.vmware.com/application-catalog "Tanzu Application Catalog")
+  1. [Kubeapps](https://tanzu.vmware.com/developer/guides/kubernetes/kubeapps-gs/ "Kubeapps") as a local marketplace of curated apps such as databases. That's the OSS version of [Tanzu Application Catalog](https://tanzu.vmware.com/application-catalog "Tanzu Application Catalog")
   1. [Tanzu Observability](https://tanzu.vmware.com/observability "Tanzu Observability") for showing the application and kuberenetes metrics
 
-We're going to be using Tanzu to deploy an application, deploy dependent services for that application, observe the metrics for that application and supporting infrastructure, and manage the cluster hosting that application.
+We're going to be using Tanzu componets to develop, build, host image and deploy an application, deploy dependent services for that application, observe the metrics for that application and supporting infrastructure, and manage the cluster hosting that application.
 
 # Fork Spring Pet Clinic
 To get started, you need to clone Spring Pet Clinic to you can make some changes to it as part of the demo process.  Click the icon in the upper right of the box below to open a new browser tab so that you can fork the Spring Pet Clinic repo into your Github account.
@@ -17,18 +17,6 @@ To get started, you need to clone Spring Pet Clinic to you can make some changes
 url: https://github.com/tanzu-end-to-end/spring-petclinic/fork
 ```
 After forking, navigate to the `/src/main/resources/messages/messages.properties` file in your forked repo.  We would like you to have this tab opened so you are ready to make an edit to this file to trigger a build later on.
-
-# Access KubeApps
-We'll be logging into KubeApps next.  To do that, we'll need to grab our user token to use to login.  Copy your user token below to use to login to kubeapps in the next step.
-```workshop:copy
-text: {{ user_token }}
-```
-
-Now, click the following link to open a new tab to Kubeapps pointing to a DB deployment that was created for you when you launched this environment. In the login screen, paste your token into the text field, and click "Login".  
-```dashboard:open-url
-url: https://kubeapps.{{ ingress_domain }}/#/c/default/ns/{{ session_namespace }}/apps
-```
-You should see a MySQL Deployment called `petclinic-db`.  It may still be starting when you first examine it, but it should go to 1 pod active fairly quickly.  Leave this view on the "Apps" tab so it is staged properly.
 
 # Concourse
 When your session was created, we logged into Concourse and added your pipeline.  Since you need to point to your fork of Spring Pet Clinic, we need to create some secrets for your Concourse pipeline.  You will need to paste the url for your PetClinic fork into the terminal prompt after clicking the box below.
@@ -74,6 +62,18 @@ Open a tab to your deployed Pet Clinic instance
 url: https://petclinic-{{ session_namespace }}.{{ ingress_domain }}
 ```
 If you don't see the Pet Clinic interface at first, go back to your Concourse tab and ensure that the `continuous-delivery` job completed successfully.  The first build can take a few minutes to complete and deploy.
+
+# Access Kubeapps
+We'll be logging into KubeApps next.  To do that, we'll need to grab our user token to use to login.  Copy your user token below to use to login to kubeapps in the next step.
+```workshop:copy
+text: {{ user_token }}
+```
+
+Now, click the following link to open a new tab to Kubeapps pointing to a DB deployment that was created for you when you launched this environment. In the login screen, paste your token into the text field, and click "Login".  
+```dashboard:open-url
+url: https://kubeapps.{{ ingress_domain }}/#/c/default/ns/{{ session_namespace }}/apps
+```
+You should see a MySQL Deployment called `petclinic-db`.  It may still be starting when you first examine it, but it should go to 1 pod active fairly quickly.  Leave this view on the "Apps" tab so it is staged properly.
 
 # SaaS Services
 **Important**: For the next sections, it is vital that you  make sure to sign-in to cloud.vmware.com with your **@vmware.com** email address and select the **"Tanzu End to End"** organization.  Please be careful not to alter the services or configurations of the clusters in these environments as they are shared for the entire End to End Demo Environment.
@@ -126,15 +126,12 @@ url: https://start.steeltoe.io
 
 # What has been covered
 We expect you have gone through the following
-	* start.spring.io
-	* The Pet Clinic spring app running
-	* The GitHub repo of the Pet Clinic example app 
-	* Concourse
-		* Make sure to go back to the pipeline overview to be staged on your "continuous-integration" and "continuous-delivery" jobs.
-	* Harbor
-		* Make sure to refresh the list of repositories after your app is deployed so that you are staged showing the "spring-petclinic" and "spring-petclinic-source" repositories.
-	* Kubeapps
-	* TAC
-	* TMC
-	* TO
-	* TSM
+* start.spring.io
+* The Pet Clinic spring app running
+* The GitHub repo of the Pet Clinic example app 
+* Concourse
+  * Make sure to go back to the pipeline overview to be staged on your "continuous-integration" and "continuous-delivery" jobs.
+* Harbor
+  * Make sure to refresh the list of repositories after your app is deployed so that you are staged showing the "spring-petclinic" and "spring-petclinic-source" repositories.
+* Kubeapps and TAC
+* TO
