@@ -1,4 +1,13 @@
-Welcome to the Tanzu End to End demo!  In this session, we'll be exploring some of the various capabilitites of Tanzu.
+## Welcome to the Tanzu End to End demo!  In this session, we are going to explore some of the [Tanzu Advanced Edition](https://tanzu.vmware.com/tanzu/advanced "Tanzu Advanced Edition") capabilities.
+
+For the **Accenture CIE** event taking place in **March 2021** we will explore 
+
+  1. A [Spring](http://start.spring.io/ "Spring") app 
+  1. [Concourse](https://tanzu.vmware.com/concoursehttp:// "Concourse") as a cloud native CI server
+  1. [Tanzu Build Service](https://tanzu.vmware.com/build-service "Tanzu Build Service")
+  1. [Harbor](https://goharbor.io/ "Harbor") as a private container image registry
+  1. Kubeapps as a local marketplace of curated apps such as databases. That's the OSS version of [Tanzu Application Catalog](https://tanzu.vmware.com/application-catalog "Tanzu Application Catalog")
+  1. [Tanzu Observability](https://tanzu.vmware.com/observability "Tanzu Observability") for showing the application and kuberenetes metrics
 
 We're going to be using Tanzu to deploy an application, deploy dependent services for that application, observe the metrics for that application and supporting infrastructure, and manage the cluster hosting that application.
 
@@ -7,7 +16,7 @@ To get started, you need to clone Spring Pet Clinic to you can make some changes
 ```dashboard:open-url
 url: https://github.com/tanzu-end-to-end/spring-petclinic/fork
 ```
-After forking, navigate to the `/src/main/resources/messages/messages.properties` file in your forked repo.  We want to pre-stage this tab so that you are ready to make an edit to this file to trigger a build later on.
+After forking, navigate to the `/src/main/resources/messages/messages.properties` file in your forked repo.  We would like you to have this tab opened so you are ready to make an edit to this file to trigger a build later on.
 
 # Access KubeApps
 We'll be logging into KubeApps next.  To do that, we'll need to grab our user token to use to login.  Copy your user token below to use to login to kubeapps in the next step.
@@ -115,18 +124,17 @@ url: https://start.steeltoe.io
 ```
 
 
-# Tab Staging
-Reorder your tabs in this way so that your demo flow goes left to right:
-* start.spring.io and/or start.steeltoe.io
-* Pet Clinic
-* GitHub
-* Concourse
-  * Make sure to go back to the pipeline overview to be staged on your "continuous-integration" and "continuous-delivery" jobs.
-* Harbor
-  * Make sure to refresh the list of repositories after your app is deployed so that you are staged showing the "spring-petclinic" and "spring-petclinic-source" repositories.
-* Kubeapps
-* TAC
-* This workshop tab on the "Console" section
-* TMC
-* TO
-* TSM
+# What has been covered
+We expect you have gone through the following
+	* start.spring.io
+	* The Pet Clinic spring app running
+	* The GitHub repo of the Pet Clinic example app 
+	* Concourse
+		* Make sure to go back to the pipeline overview to be staged on your "continuous-integration" and "continuous-delivery" jobs.
+	* Harbor
+		* Make sure to refresh the list of repositories after your app is deployed so that you are staged showing the "spring-petclinic" and "spring-petclinic-source" repositories.
+	* Kubeapps
+	* TAC
+	* TMC
+	* TO
+	* TSM
